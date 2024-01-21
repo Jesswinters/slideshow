@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
@@ -42,11 +42,14 @@ function Slideshow({ images }: SlideshowProps) {
 
   return (
     <div className="slideshow-container">
-      <Slide duration={5000} onChange={handleSlideChange}>
-        {images.map((image, index) => (
-          <div key={index} className="each-slide">
-            <img key={currentSlide} src={image} alt={parseImageName(image)} />
-          </div>
+      <Slide duration={15000} onChange={handleSlideChange}>
+        {images.map((image) => (
+          <img
+            key={currentSlide}
+            src={image}
+            alt={parseImageName(image)}
+            className="each-slide"
+          />
         ))}
       </Slide>
     </div>
