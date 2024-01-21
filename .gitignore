@@ -1,0 +1,211 @@
+################################################################################
+# Demystify .gitignore patterns.
+#
+# Ignored path will be printed.
+# $ git check-ignore <path1> <path2>
+#
+# a/ means any nested a/ folder.
+# E.g.
+#   a/x.sh
+#   a/b/x.sh
+#   b/a/x.sh
+#
+# a/* is an alias of /a/, meaning folder <root>/a/.
+# E.g.
+#   a/x.sh
+#   a/b/x.sh
+#
+# a/b is an alias of /a/b, meaning file <root>/a/b and folder <root>/a/b/.
+# E.g.
+#   a/b
+#   a/b/
+#
+# a/b/ and a/b/* are aliases of /a/b/, meaning folder <root>/a/b/.
+# E.g.
+#   a/b/x.sh
+#   a/b/c/x.sh
+#
+# **/a/* is an alias of a/, meaning any nested a/ folder.
+#
+#
+# In conclusion,
+#
+# 1) avoid wild cards when possible,
+# 2) prefix a "/" to denote the project root.
+#
+# This way we benefit from minimum confusion. Below is a list of takeaways.
+#
+# a/*    => /a/
+# a/b    => /a/b
+# a/b/   => /a/b/
+# a/b/*  => /a/b/
+# **/a/* => a/
+#
+################################################################################
+
+*.log
+.coverage
+*coverage*xml
+htmlcov
+py-coverage*
+*.pot
+*settings_local*
+fab_local.py
+*.pyc
+*.swp
+.eprj
+jutage-report.json
+.hypothesis
+
+*.db
+*.db-journal
+*.sqlite
+*.bat
+*.listen_test
+*.box
+*.bak
+*.nfs*
+junit*.xml
+
+*backup*
+
+.local
+.local-backup
+*.tar.gz
+
+.dropbox
+.vagrant
+*conflicted*
+rover-contacts.csv
+
+# Build artifacts
+build/
+dist/
+out/
+web/__generated__/*.build.js
+web/__generated__/*.html
+!web/frontend/assets/app/developer-v3/store/build/
+cjs/
+esm/
+
+# graphql
+graphql-schema.json
+
+offline_messages
+
+.sass*
+*.psd
+*git*.sh
+
+.DS_Store
+*.DS_STORE
+*.DS_Store
+
+*.pid
+*~
+*.rdb
+
+offline_messages
+
+filename
+
+.project
+.itermocil
+
+.pydevproject
+.vagrant
+
+.floo*
+.sublime-project
+FLOOBITS_README.md
+
+id_rsa
+id_rsa.pub
+nosetests.xml
+
+supervisor.log
+supervisord.log*
+zookeeper*.pem
+
+# Environement files
+.env
+.environment
+
+# Makefile flags
+.flag.*
+
+coverage/
+
+# IDEs
+*.code-workspace
+*.iml
+.idea/
+.vscode/*
+!.vscode/launch.examples.json
+
+/web/backend/zapier/gemini/report
+/web/backend/install_log
+
+/web/frontend/assets/flow-coverage/flow-coverage.json
+
+/web/bash/local_bash_rcfile
+
+# Paths for python API doc build files:
+/web/docs/apidocs/
+/web/docs/_build/
+
+# Ignore all `node_modules` folder (at the root or nested)
+node_modules/
+
+# Ignore all `.yalc` folders and lockfiles (at the root or nested)
+.yalc
+yalc.lock
+
+# We are using yarn, prevent people that use npm to commit their lockfile
+package-lock.json
+
+# Ignore nested yarn.lock files that some developers may add by inadvertence
+**/yarn.lock
+
+# ignore per-developer frontend devtools.js
+/web/frontend/assets/app/devtools.js
+
+# ignore tracking events report CSV file
+/web/frontend/events.csv
+
+# ignore generated certs files
+/nginx-proxy/certs/*
+/nginx-proxy/includes/ssl.conf
+
+# mypy daemon
+.dmypy.json
+.mypy_cache
+
+# zapier_django_mypy_plugin
+.cache
+
+# Splitio
+.split
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
