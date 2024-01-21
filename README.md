@@ -1,10 +1,22 @@
-# Getting Started with Create React App
+# Simple Slideshow
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 A simple slideshow using React, TypeScript, and react-slideshow-image.
 
-Everytime a picture is viewed, it's stored in `localStorage` with the name `slideshowViewCounts`. It persists until the browser's cache is cleared.
+This slideshow has the following features:
+ - Works on desktop, tablets, and mobile (responsive).
+ - Displays the images in the images folder.
+ - Tracks how many times each slide picture is viewed (and is stored between refreshes in `localStorage` with the `Key`: `slideshowViewCounts`).
+
+ I chose to use the following packages:
+ - `react-slideshow-image` package because it's lightweight and easy to use.
+ - React because it's easy to get apps up and running with it.
+ - And TypeScript to ensure typechecking.
+
+ Personally, I don't recommend slideshows/carousels as they are difficult to make accessible and don't convey useful information most of the time, especially when customers interact with them.
+ 
+ For more information, check out this site: https://shouldiuseacarousel.com/
 
 ## Available Scripts
 
